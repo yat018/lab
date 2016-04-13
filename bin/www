@@ -1,9 +1,13 @@
 ﻿#!/usr/bin/env node
+/* Set up debugging */ 
 var debug = require('debug')('lab');
+/* Grab our Node.js app, stored as the variable 'app' from app.js */
 var app = require('../app');
 
+/* Set the port */
 app.set('port', process.env.PORT || 3000);
 
+/* Start the server listener */
 var server = app.listen(app.get('port'), function() {
     console.log('Express server listening on port ' + server.address().port);
     debug('Express server listening on port ' + server.address().port);
